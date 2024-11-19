@@ -931,6 +931,8 @@ GameObject:
   - component: {fileID: 672360838}
   - component: {fileID: 672360840}
   - component: {fileID: 672360841}
+  - component: {fileID: 672360842}
+  - component: {fileID: 672360843}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1011,7 +1013,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e89edf3a9f354821afa98e70ac7d156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrollingTargets: []
+  patrollingTargets:
+  - {fileID: 195027583}
+  - {fileID: 1545670817}
+  - {fileID: 2123650390}
+  - {fileID: 1062649529}
+  - {fileID: 158060635}
+--- !u!114 &672360842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672360837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f0e1b4529fd4babae8d12969ae4430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 5
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  viewAngle: 90.2
+  viewSpectrumIterator: 5
+--- !u!114 &672360843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672360837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebf008eadc534e8abb9fe173240a8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &810153564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,7 +2074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputManager: {fileID: 601758826}
   playerRB: {fileID: 1402472964}
-  moveSpeed: 5
+  moveSpeed: 10
   rotationSpeed: 10
 --- !u!1 &1417193542
 GameObject:

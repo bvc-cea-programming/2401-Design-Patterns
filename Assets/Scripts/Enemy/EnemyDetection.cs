@@ -25,6 +25,12 @@ public class EnemyDetection : MonoBehaviour
         return _visibleThreats[0];
     }
 
+    public void SetDetectionParams(float ViewRadius, float ViewAngle)
+    {
+        viewAngle = ViewAngle;
+        viewRadius = ViewRadius;
+    }
+
     private void Detect()
     {
         _visibleThreats.Clear();

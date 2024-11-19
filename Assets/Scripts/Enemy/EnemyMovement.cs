@@ -33,6 +33,17 @@ public class EnemyMovement : MonoBehaviour
         _isPatrolling = value;
     }
 
+    public void StopMovement()
+    {
+        _agent.isStopped = true;
+    }
+
+    public void StartMovement()
+    {
+        _agent.isStopped = false;
+    }
+    
+
     public void FollowTarget(Transform target)
     {
         _isPatrolling = false;

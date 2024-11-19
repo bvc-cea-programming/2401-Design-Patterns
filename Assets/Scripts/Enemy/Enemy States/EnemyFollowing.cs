@@ -10,6 +10,8 @@ public class EnemyFollowing : BaseState
     {
         _stateMachine = stateMachine;
     }
+
+    private Transform _threat;
     
     public override void EnterState()
     {
@@ -18,7 +20,19 @@ public class EnemyFollowing : BaseState
 
     public override void UpdateState()
     {
-        
+        Debug.Log("Hey stop! I am following youuuuuu!!! >_<");
+        // if the threat is still around, keep following it. If not, go to the patrolling state
+        _threat = _stateMachine.EnemyDetection.GetRecentThreat();
+
+        if (_threat)
+        {
+            _stateMachine.EnemyMovement.StartMovement();
+            _stateMachine.EnemyMovement.FollowTarget(_threat);
+        }
+        else
+        {
+            _stateMachine.SetState(_stateMachine.EnemyPatrollingState);
+        }
     }
 
     public override void ExitState()
