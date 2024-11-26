@@ -6,6 +6,8 @@ public class InputManager : MonoBehaviour
 {
     // Player will listen to this
     public event Action<Vector2> onMove;
+    public event Action onInteract;
+    
     private PlayerInput _playerInput;
     
     private void OnEnable()
@@ -22,6 +24,7 @@ public class InputManager : MonoBehaviour
     {
         _playerInput = new PlayerInput();
         _playerInput.Player.Move.performed += OnMove;
+        _playerInput.Player.Interact.performed += OnInteract;
         _playerInput.Enable();
     }
 
@@ -30,6 +33,7 @@ public class InputManager : MonoBehaviour
         if(_playerInput == null) return;
         
         _playerInput.Player.Move.performed -= OnMove;
+        _playerInput.Player.Interact.performed -= OnInteract;
         _playerInput.Disable();
         _playerInput = null;
     }
@@ -37,5 +41,10 @@ public class InputManager : MonoBehaviour
     private void OnMove(InputAction.CallbackContext context)
     {
         onMove?.Invoke(context.ReadValue<Vector2>());
+    }
+
+    private void OnInteract(InputAction.CallbackContext context)
+    {
+        onInteract?.Invoke();
     }
 }
