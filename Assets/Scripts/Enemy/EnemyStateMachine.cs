@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class EnemyStateMachine : BaseStateMachine
@@ -22,7 +23,8 @@ public class EnemyStateMachine : BaseStateMachine
     public EnemyMovement EnemyMovement => _enemyMovement;
     public EnemyDetection EnemyDetection => _enemyDetection;
     public EnemyAlertVisualizer EnemyAlertVisualizer => _enemyAlertVisualizer;
-
+    [SerializeField] private Animator _animator;
+    public Animator Animator => _animator;
     private void Awake()
     {
         _enemyPatrollingState = new EnemyPatrolling(this);
