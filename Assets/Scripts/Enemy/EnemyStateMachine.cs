@@ -9,7 +9,7 @@ public class EnemyStateMachine : BaseStateMachine
     private EnemyPatrolling _enemyPatrollingState;
     private EnemyFollowing _enemyFollowingState;
     private EnemyAlert _enemyAlertState;
-
+    [SerializeField] private Animator _enemyAnimator;
     public EnemyPatrolling EnemyPatrollingState => _enemyPatrollingState;
     public EnemyFollowing EnemyFollowingState => _enemyFollowingState;
     public EnemyAlert EnemyAlertState => _enemyAlertState;
@@ -22,6 +22,8 @@ public class EnemyStateMachine : BaseStateMachine
     public EnemyMovement EnemyMovement => _enemyMovement;
     public EnemyDetection EnemyDetection => _enemyDetection;
     public EnemyAlertVisualizer EnemyAlertVisualizer => _enemyAlertVisualizer;
+
+    public Animator EnemyAnimator => _enemyAnimator;
 
     private void Awake()
     {
