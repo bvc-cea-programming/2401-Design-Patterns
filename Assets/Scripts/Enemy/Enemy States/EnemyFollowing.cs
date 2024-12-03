@@ -16,6 +16,7 @@ public class EnemyFollowing : BaseState
     public override void EnterState()
     {
         Debug.Log("Enemy now entering the following state");
+        _stateMachine.EnemyAnimation.SetTrigger("Following");
     }
 
     public override void UpdateState()
@@ -28,17 +29,18 @@ public class EnemyFollowing : BaseState
         {
             _stateMachine.EnemyMovement.StartMovement();
             _stateMachine.EnemyMovement.FollowTarget(_threat);
-            _stateMachine.EnemyAnimation.SetTrigger("Following");
+            
         }
         else
         {
             _stateMachine.SetState(_stateMachine.EnemyPatrollingState);
-            _stateMachine.EnemyAnimation.ResetTrigger("Following");
+            
         }
     }
 
     public override void ExitState()
     {
         Debug.Log("Enemy now exiting the following state");
+        _stateMachine.EnemyAnimation.ResetTrigger("Following");
     }
 }
