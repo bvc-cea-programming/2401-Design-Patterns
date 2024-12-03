@@ -28,10 +28,12 @@ public class EnemyFollowing : BaseState
         {
             _stateMachine.EnemyMovement.StartMovement();
             _stateMachine.EnemyMovement.FollowTarget(_threat);
+            _stateMachine.EnemyAnimation.SetTrigger("Following");
         }
         else
         {
             _stateMachine.SetState(_stateMachine.EnemyPatrollingState);
+            _stateMachine.EnemyAnimation.ResetTrigger("Following");
         }
     }
 

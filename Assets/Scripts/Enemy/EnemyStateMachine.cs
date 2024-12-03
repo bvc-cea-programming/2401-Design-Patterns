@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyStateMachine : BaseStateMachine
 {
+    private Animator animator;
     // Keep track of all the states
     private EnemyPatrolling _enemyPatrollingState;
     private EnemyFollowing _enemyFollowingState;
@@ -23,8 +24,12 @@ public class EnemyStateMachine : BaseStateMachine
     public EnemyDetection EnemyDetection => _enemyDetection;
     public EnemyAlertVisualizer EnemyAlertVisualizer => _enemyAlertVisualizer;
 
+    public Animator EnemyAnimation => animator;
+
     private void Awake()
     {
+        animator = GetComponentInChildren<Animator>();
+        Debug.Log(animator);
         _enemyPatrollingState = new EnemyPatrolling(this);
         _enemyFollowingState = new EnemyFollowing(this);
         _enemyAlertState = new EnemyAlert(this);

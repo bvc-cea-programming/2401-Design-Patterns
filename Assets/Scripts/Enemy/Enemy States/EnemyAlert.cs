@@ -21,6 +21,7 @@ public class EnemyAlert : BaseState
         
         // show the alert gizmo " ! "
         _stateMachine.EnemyAlertVisualizer.ShowAlert();
+        _stateMachine.EnemyAnimation.SetTrigger("Alert");
         
         // Make the enemy powerful
         //set default detection params
@@ -47,5 +48,6 @@ public class EnemyAlert : BaseState
     private void StartFollow()
     {
         _stateMachine.SetState(_stateMachine.EnemyFollowingState);
+        _stateMachine.EnemyAnimation.ResetTrigger("Alert");
     }
 }
