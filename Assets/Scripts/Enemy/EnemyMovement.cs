@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -31,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
     public void SetPatrolling(bool value)
     {
         _isPatrolling = value;
+        
     }
 
     public void StopMovement()
