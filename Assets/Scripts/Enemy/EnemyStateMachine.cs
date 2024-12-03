@@ -9,10 +9,12 @@ public class EnemyStateMachine : BaseStateMachine
     private EnemyPatrolling _enemyPatrollingState;
     private EnemyFollowing _enemyFollowingState;
     private EnemyAlert _enemyAlertState;
+    [SerializeField] private Animator animtorControler;
 
     public EnemyPatrolling EnemyPatrollingState => _enemyPatrollingState;
     public EnemyFollowing EnemyFollowingState => _enemyFollowingState;
     public EnemyAlert EnemyAlertState => _enemyAlertState;
+    public Animator AnimtorControler => animtorControler;
     
     // Keep track of supporting components
     private EnemyMovement _enemyMovement;
@@ -32,6 +34,7 @@ public class EnemyStateMachine : BaseStateMachine
         _enemyMovement = GetComponent<EnemyMovement>();
         _enemyDetection = GetComponent<EnemyDetection>();
         _enemyAlertVisualizer = GetComponent<EnemyAlertVisualizer>();
+        animtorControler = GetComponentInChildren<Animator>();
         
     }
 

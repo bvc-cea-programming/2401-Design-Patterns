@@ -25,7 +25,8 @@ public class EnemyAlert : BaseState
         // Make the enemy powerful
         //set default detection params
         _stateMachine.EnemyDetection.SetDetectionParams(20.0f, 180.0f);
-        
+       
+
         _timer = 0;
     }
 
@@ -36,6 +37,7 @@ public class EnemyAlert : BaseState
         if (_timer > _stateMachine.EnemyAlertVisualizer.AlertTime)
         {
             StartFollow();
+            _stateMachine.AnimtorControler.SetTrigger("alart");
         }
     }
 
@@ -47,5 +49,6 @@ public class EnemyAlert : BaseState
     private void StartFollow()
     {
         _stateMachine.SetState(_stateMachine.EnemyFollowingState);
+        _stateMachine.AnimtorControler.SetTrigger("follow");
     }
 }

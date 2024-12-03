@@ -19,6 +19,8 @@ public class EnemyPatrolling : BaseState
         // Start Patrolling
         _stateMachine.EnemyMovement.StartMovement();
         _stateMachine.EnemyMovement.SetPatrolling(true);
+        //ANIMATION
+        _stateMachine.AnimtorControler.SetTrigger("patrol" );
         
         //set default detection params
         _stateMachine.EnemyDetection.SetDetectionParams(5.0f, 90.0f);
@@ -33,6 +35,8 @@ public class EnemyPatrolling : BaseState
         if (_threat != null)
         {
             _stateMachine.SetState(_stateMachine.EnemyAlertState);
+            //animation
+            _stateMachine.AnimtorControler.SetTrigger("alart");
         }
     }
 
