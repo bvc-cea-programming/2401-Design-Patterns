@@ -22,6 +22,7 @@ public class EnemyPatrolling : BaseState
         
         //set default detection params
         _stateMachine.EnemyDetection.SetDetectionParams(5.0f, 90.0f);
+        _stateMachine.animator.SetTrigger("patrol");
     }
 
     public override void UpdateState()

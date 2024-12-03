@@ -23,6 +23,11 @@ public class EnemyStateMachine : BaseStateMachine
     public EnemyDetection EnemyDetection => _enemyDetection;
     public EnemyAlertVisualizer EnemyAlertVisualizer => _enemyAlertVisualizer;
 
+    [SerializeField]
+    private Animator _animator;
+
+    public Animator animator => _animator;
+
     private void Awake()
     {
         _enemyPatrollingState = new EnemyPatrolling(this);

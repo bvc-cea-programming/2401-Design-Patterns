@@ -25,7 +25,8 @@ public class EnemyAlert : BaseState
         // Make the enemy powerful
         //set default detection params
         _stateMachine.EnemyDetection.SetDetectionParams(20.0f, 180.0f);
-        
+        _stateMachine.animator.SetTrigger("alert");
+
         _timer = 0;
     }
 
