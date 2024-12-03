@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class EnemyStateMachine : BaseStateMachine
@@ -18,10 +19,13 @@ public class EnemyStateMachine : BaseStateMachine
     private EnemyMovement _enemyMovement;
     private EnemyDetection _enemyDetection;
     private EnemyAlertVisualizer _enemyAlertVisualizer;
+    [SerializeField] private Animator _enemyAnimations;
 
     public EnemyMovement EnemyMovement => _enemyMovement;
     public EnemyDetection EnemyDetection => _enemyDetection;
     public EnemyAlertVisualizer EnemyAlertVisualizer => _enemyAlertVisualizer;
+    public Animator EnemyAnimations => _enemyAnimations;
+
 
     private void Awake()
     {
@@ -32,7 +36,6 @@ public class EnemyStateMachine : BaseStateMachine
         _enemyMovement = GetComponent<EnemyMovement>();
         _enemyDetection = GetComponent<EnemyDetection>();
         _enemyAlertVisualizer = GetComponent<EnemyAlertVisualizer>();
-        
     }
 
     private void Start()

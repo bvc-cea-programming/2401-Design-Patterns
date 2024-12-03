@@ -17,6 +17,8 @@ public class EnemyPatrolling : BaseState
     {
         Debug.Log("Enemy now entering the patrolling state");
         // Start Patrolling
+        _stateMachine.EnemyAnimations.SetTrigger("Patrol");
+
         _stateMachine.EnemyMovement.StartMovement();
         _stateMachine.EnemyMovement.SetPatrolling(true);
         
