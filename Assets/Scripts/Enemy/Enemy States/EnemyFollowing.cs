@@ -16,6 +16,7 @@ public class EnemyFollowing : BaseState
     public override void EnterState()
     {
         Debug.Log("Enemy now entering the following state");
+        _stateMachine._enemyAnimator.SetTrigger("follow");
     }
 
     public override void UpdateState()
@@ -23,15 +24,18 @@ public class EnemyFollowing : BaseState
         Debug.Log("Hey stop! I am following youuuuuu!!! >_<");
         // if the threat is still around, keep following it. If not, go to the patrolling state
         _threat = _stateMachine.EnemyDetection.GetRecentThreat();
+       
 
         if (_threat)
         {
             _stateMachine.EnemyMovement.StartMovement();
             _stateMachine.EnemyMovement.FollowTarget(_threat);
+           
         }
         else
         {
             _stateMachine.SetState(_stateMachine.EnemyPatrollingState);
+            
         }
     }
 

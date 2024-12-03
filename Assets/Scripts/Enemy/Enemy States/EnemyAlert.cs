@@ -18,6 +18,7 @@ public class EnemyAlert : BaseState
         // stop the movement of the player
         _stateMachine.EnemyMovement.StopMovement();
         _stateMachine.EnemyMovement.SetPatrolling(false);
+        _stateMachine._enemyAnimator.SetTrigger("alert");
         
         // show the alert gizmo " ! "
         _stateMachine.EnemyAlertVisualizer.ShowAlert();
@@ -47,5 +48,6 @@ public class EnemyAlert : BaseState
     private void StartFollow()
     {
         _stateMachine.SetState(_stateMachine.EnemyFollowingState);
+        
     }
 }
