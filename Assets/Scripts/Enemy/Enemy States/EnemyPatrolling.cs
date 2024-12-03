@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyPatrolling : BaseState
@@ -19,6 +17,8 @@ public class EnemyPatrolling : BaseState
         // Start Patrolling
         _stateMachine.EnemyMovement.StartMovement();
         _stateMachine.EnemyMovement.SetPatrolling(true);
+        
+        _stateMachine.Animator.SetTrigger("patrol");
         
         //set default detection params
         _stateMachine.EnemyDetection.SetDetectionParams(5.0f, 90.0f);

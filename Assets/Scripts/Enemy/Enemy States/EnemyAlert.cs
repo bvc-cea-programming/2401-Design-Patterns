@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAlert : BaseState
@@ -18,6 +16,8 @@ public class EnemyAlert : BaseState
         // stop the movement of the player
         _stateMachine.EnemyMovement.StopMovement();
         _stateMachine.EnemyMovement.SetPatrolling(false);
+        
+        _stateMachine.Animator.SetTrigger("alert");
         
         // show the alert gizmo " ! "
         _stateMachine.EnemyAlertVisualizer.ShowAlert();
