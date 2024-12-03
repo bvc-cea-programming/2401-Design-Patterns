@@ -20,6 +20,6 @@ public class CharacterHealthBarView : MonoBehaviour
     }
     private void UpdateHealthBar(float value)
     {
-        playerHPBar.fillAmount = value / 100;
+        playerHPBar.fillAmount = value / characterDataController.data.MaxHealth;
     }
 }

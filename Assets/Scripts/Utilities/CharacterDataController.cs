@@ -6,8 +6,12 @@ using UnityEngine.Events;
 
 public class CharacterDataController : MonoBehaviour
 {
-    [SerializeField] private CharacterData data;
+    [SerializeField] public CharacterData data;
     public event Action<float> OnHealthUpdated;
+    private void Awake()
+    {
+        data.Health = data.MaxHealth;
+    }
     public void AppendHealth(float value)
     {
         data.Health += value;
