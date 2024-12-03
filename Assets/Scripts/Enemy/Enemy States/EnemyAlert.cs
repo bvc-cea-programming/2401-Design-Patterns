@@ -27,6 +27,9 @@ public class EnemyAlert : BaseState
         _stateMachine.EnemyDetection.SetDetectionParams(20.0f, 180.0f);
         
         _timer = 0;
+
+        //Animation
+        _stateMachine.EnemyAnimatorController.SetTrigger("alert");
     }
 
     public override void UpdateState()
@@ -41,7 +44,8 @@ public class EnemyAlert : BaseState
 
     public override void ExitState()
     {
-        
+        //Animation
+        _stateMachine.EnemyAnimatorController.ResetTrigger("alert");
     }
 
     private void StartFollow()

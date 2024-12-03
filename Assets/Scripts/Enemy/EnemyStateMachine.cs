@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class EnemyStateMachine : BaseStateMachine
@@ -9,10 +10,13 @@ public class EnemyStateMachine : BaseStateMachine
     private EnemyPatrolling _enemyPatrollingState;
     private EnemyFollowing _enemyFollowingState;
     private EnemyAlert _enemyAlertState;
+    [SerializeField] private Animator _enemyAnimatorController;
 
     public EnemyPatrolling EnemyPatrollingState => _enemyPatrollingState;
     public EnemyFollowing EnemyFollowingState => _enemyFollowingState;
     public EnemyAlert EnemyAlertState => _enemyAlertState;
+
+    public Animator EnemyAnimatorController => _enemyAnimatorController;
     
     // Keep track of supporting components
     private EnemyMovement _enemyMovement;

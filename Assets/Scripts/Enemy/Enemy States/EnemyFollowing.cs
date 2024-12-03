@@ -16,6 +16,9 @@ public class EnemyFollowing : BaseState
     public override void EnterState()
     {
         Debug.Log("Enemy now entering the following state");
+
+        //Animation
+        _stateMachine.EnemyAnimatorController.SetTrigger("follow");
     }
 
     public override void UpdateState()
@@ -38,5 +41,8 @@ public class EnemyFollowing : BaseState
     public override void ExitState()
     {
         Debug.Log("Enemy now exiting the following state");
+
+        //Animation
+        _stateMachine.EnemyAnimatorController.ResetTrigger("alert");
     }
 }
