@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84bc9827a78f954c98986c18204289e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterDataController: {fileID: 1402472968}
+  characterDataController: {fileID: 0}
   healthBarImage: {fileID: 411874570}
 --- !u!114 &411874570
 MonoBehaviour:
@@ -4080,7 +4080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84bc9827a78f954c98986c18204289e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterDataController: {fileID: 1402472968}
+  characterDataController: {fileID: 1402472968}
   healthBarImage: {fileID: 411874570}
 --- !u!1 &1917645245
 GameObject:
