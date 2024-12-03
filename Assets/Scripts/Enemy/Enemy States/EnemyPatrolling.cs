@@ -16,6 +16,10 @@ public class EnemyPatrolling : BaseState
     public override void EnterState()
     {
         Debug.Log("Enemy now entering the patrolling state");
+
+        // Trigger Patrolling animation
+        _stateMachine.EnemyAnimation.SetTrigger("patrol");
+
         // Start Patrolling
         _stateMachine.EnemyMovement.StartMovement();
         _stateMachine.EnemyMovement.SetPatrolling(true);

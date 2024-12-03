@@ -13,6 +13,9 @@ public class EnemyStateMachine : BaseStateMachine
     public EnemyPatrolling EnemyPatrollingState => _enemyPatrollingState;
     public EnemyFollowing EnemyFollowingState => _enemyFollowingState;
     public EnemyAlert EnemyAlertState => _enemyAlertState;
+
+    [SerializeField] private Animator enemyAnimation;
+    public Animator EnemyAnimation => enemyAnimation;
     
     // Keep track of supporting components
     private EnemyMovement _enemyMovement;

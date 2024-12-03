@@ -15,6 +15,9 @@ public class EnemyAlert : BaseState
 
     public override void EnterState()
     {
+        // Trigger Alert animation
+        _stateMachine.EnemyAnimation.SetTrigger("alert");
+        
         // stop the movement of the player
         _stateMachine.EnemyMovement.StopMovement();
         _stateMachine.EnemyMovement.SetPatrolling(false);

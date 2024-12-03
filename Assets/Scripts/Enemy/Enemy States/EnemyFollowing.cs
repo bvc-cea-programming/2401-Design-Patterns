@@ -16,6 +16,9 @@ public class EnemyFollowing : BaseState
     public override void EnterState()
     {
         Debug.Log("Enemy now entering the following state");
+
+        // Trigger Following animation
+        _stateMachine.EnemyAnimation.SetTrigger("follow");
     }
 
     public override void UpdateState()
