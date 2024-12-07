@@ -18,8 +18,9 @@ public class EnemyAlert : BaseState
         // stop the movement of the player
         _stateMachine.EnemyMovement.StopMovement();
         _stateMachine.EnemyMovement.SetPatrolling(false);
-        
+
         // show the alert gizmo " ! "
+        _stateMachine.animator.SetTrigger("alert");
         _stateMachine.EnemyAlertVisualizer.ShowAlert();
         
         // Make the enemy powerful

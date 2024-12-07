@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyPatrolling : BaseState
 {
     private EnemyStateMachine _stateMachine;
-    
+
     public EnemyPatrolling(EnemyStateMachine stateMachine)
     {
         _stateMachine = stateMachine;
@@ -19,7 +19,8 @@ public class EnemyPatrolling : BaseState
         // Start Patrolling
         _stateMachine.EnemyMovement.StartMovement();
         _stateMachine.EnemyMovement.SetPatrolling(true);
-        
+        _stateMachine.animator.SetTrigger("patrol");
+
         //set default detection params
         _stateMachine.EnemyDetection.SetDetectionParams(5.0f, 90.0f);
     }

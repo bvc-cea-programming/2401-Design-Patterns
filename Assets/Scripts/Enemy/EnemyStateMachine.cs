@@ -10,6 +10,9 @@ public class EnemyStateMachine : BaseStateMachine
     private EnemyFollowing _enemyFollowingState;
     private EnemyAlert _enemyAlertState;
 
+    // Get animator reference
+    public Animator animator;
+
     public EnemyPatrolling EnemyPatrollingState => _enemyPatrollingState;
     public EnemyFollowing EnemyFollowingState => _enemyFollowingState;
     public EnemyAlert EnemyAlertState => _enemyAlertState;
@@ -38,6 +41,7 @@ public class EnemyStateMachine : BaseStateMachine
     private void Start()
     {
         // Switch to the default state of patrolling
+        animator = GetComponent<Animator>();
         SetState(_enemyPatrollingState);
     }
 }
