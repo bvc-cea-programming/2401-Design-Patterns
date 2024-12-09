@@ -40,8 +40,6 @@ public class EnemyStateMachine : BaseStateMachine
 
     private void Start()
     {
-        // Switch to the default state of patrolling
-        animator = GetComponent<Animator>();
         SetState(_enemyPatrollingState);
     }
 }
