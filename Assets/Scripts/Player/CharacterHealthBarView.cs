@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterHealthBarView : MonoBehaviour
 {
-    [SerializeField] private CharacterData _data;
-    private float maxHP;
+    [SerializeField] private CharacterDataController _CharacterDataController;
+
+    [Header("UI Elements")]
     [SerializeField] private Image HPBar;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        maxHP = _data.health;
+        _CharacterDataController.onHealthUpdated += UpdateHealthText;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        HPBar.fillAmount = Mathf.Clamp(_data.health / maxHP, 0, 1);
+        _CharacterDataController.onHealthUpdated -= UpdateHealthText;
+    }
+
+    private void UpdateHealthText(float value, float maxValue)
+    {
+        HPBar.fillAmount = Mathf.Clamp(value / maxValue, 0, 1);
     }
 }

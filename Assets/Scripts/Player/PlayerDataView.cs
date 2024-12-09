@@ -20,8 +20,8 @@ public class PlayerDataView : MonoBehaviour
         _CharacterDataController.onHealthUpdated -= UpdateHealthText;
     }
 
-    private void UpdateHealthText(float value)
+    private void UpdateHealthText(float value, float maxValue)
     {
-        txtPlayerHealth.SetText("Health: " + value);
+        txtPlayerHealth.SetText("Health: " + value + " / " + maxValue);
     }
 }

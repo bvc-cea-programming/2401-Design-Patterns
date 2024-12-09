@@ -7,11 +7,21 @@ public class CharacterDataController : MonoBehaviour
 {
     [SerializeField] private CharacterData data;
 
-    public event Action<float> onHealthUpdated;
+    public event Action<float, float> onHealthUpdated;
+
+    private void Start()
+    {
+        data.health = data.maxHealth;
+        onHealthUpdated?.Invoke(data.health, data.maxHealth);
+    }
 
     public void AppendHealth(float value)
     {
         data.health += value;
-        onHealthUpdated?.Invoke(data.health);
+        if (data.health > data.maxHealth)
+        {
+            data.health = data.maxHealth;
+        }
+        onHealthUpdated?.Invoke(data.health, data.maxHealth);
     }
 }
