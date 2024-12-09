@@ -23,6 +23,6 @@ public class CharacterHealthBarView : MonoBehaviour
         _target = _characterData.GetHealth() / _characterData.GetMaxHealth();
 
         // Update the fill amount of the Health bar
-        _image.fillAmount = Mathf.Lerp(_image.fillAmount, _target, Time.deltaTime); // Lerp the value smoothly over time
+        _image.fillAmount = Mathf.Lerp(_image.fillAmount, _target, Time.deltaTime * 2); // Lerp the value smoothly over time
     }
 }
